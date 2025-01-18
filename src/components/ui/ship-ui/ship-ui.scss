@@ -12,6 +12,16 @@
     }
 }
 
+.characteristic-popup {
+  position: fixed; /* Фиксируем относительно окна */
+  display: flex;
+  pointer-events: none; /* Отключаем возможность взаимодействия */
+  z-index: 1000;
+  width: 100px;
+  height: 500px;
+  background-color: rgba(0, 0, 17, 0.3);
+}
+
 @media (max-width: 1200px) {
     .ship {
       flex: 0 1 calc(33.33% - 16px);

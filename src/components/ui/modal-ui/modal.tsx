@@ -1,7 +1,8 @@
 import { FC } from "react";
-import { TModalProps } from "./types";
+import { TModalUIProps } from "./types";
+import './modal.scss';
 
-export const ModalUI: FC<TModalProps> = (props) => (
+export const ModalUI: FC<TModalUIProps> = (props) => (
     <>
         <div className="modal">
             <div className="modal__overlay" onClick={props.onClose}></div>

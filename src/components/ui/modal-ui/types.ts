@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 
-export type TModalProps = {
-    isOpen: boolean,
+export type TModalUIProps = {
     onClose: () => void,
     children: ReactNode,
 };

@@ -18,7 +18,7 @@ const initialState: TInitialState = {
   error: undefined,
 }
 
-export const fetchGetShips = createAsyncThunk('ships/getShips', async () => getShips());
+export const fetchGetShips = createAsyncThunk('ships/getShips', async () => await getShips());
 
 const shipsSlice = createSlice({
     name: 'ships',

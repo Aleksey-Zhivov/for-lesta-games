@@ -1,6 +1,5 @@
-.header {
+.footer {
     height: 56px;
-    width: calc(100% - 64px);
     background-color: rgba(128, 128, 128, 0.1);
     display: flex;
     flex-direction: row;
@@ -8,11 +7,4 @@
     padding-inline: 32px;
     padding-block: 10px;
     align-items: center;
-
-    &__link {
-        display: flex;
-        width: 143px;
-        height: 36px;
-        align-self: center;
-    }
 }

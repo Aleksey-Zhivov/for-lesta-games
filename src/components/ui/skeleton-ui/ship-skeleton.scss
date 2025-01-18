@@ -1,0 +1,26 @@
+.ship-skeleton {
+    flex: 0 1 calc(25% - 16px);
+    background: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  
+    &__image {
+        width: 75%;
+        height: 120px;
+        background: #ccc;
+        margin-bottom: 12px;
+        border-radius: 4px;
+    }
+  
+    &__title {
+        width: 80%;
+        height: 20px;
+        background: #ddd;
+        border-radius: 4px;
+    }
+}
