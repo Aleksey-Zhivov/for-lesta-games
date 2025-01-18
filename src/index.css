@@ -1,68 +1,84 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color-light: #ffffff;
+  --background-color-dark: #121212;
+  --text-color-light: #ca1b1b;
+  --text-color-dark: #ffffff;
+  --border-color-light: #e5e5e5;
+  --border-color-dark: #424242;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --toggle-background-light: #87ceeb;
+  --toggle-background-dark: #1a237e;
+  --toggle-thumb-light: #ffd700;
+  --toggle-thumb-dark: #feffc3;
+  --toggle-thumb-shadow-light: 0 0 8px 2px rgba(255, 215, 0, 0.7); 
+  --transition-time: 0.3s;
 }
 
 body {
+  background-color: var(--background-color-light);
+  background-image: url(../src/assets/back-light.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--text-color-light);
+  transition: background-color var(--transition-time), color var(--transition-time);
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body.dark-theme {
+  background-color: var(--background-color-dark);
+  background-image: url(../src/assets/back-dark.jpg);
+  color: var(--text-color-dark);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--secondary-color);
+  }
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--primary-color);
+  color: var(--background-color-light);
+  border: 1px solid var(--border-color-light);
+  border-radius: 4px;
+  padding: 8px 16px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background-color var(--transition-time) ease, color var(--transition-time) ease;
+
+  &:hover {
+    background-color: var(--secondary-color);
+  }
+
+  &:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+::-webkit-scrollbar {
+  width: 12px; /* Ширина вертикального скроллбара */
+  height: 12px; /* Высота горизонтального скроллбара */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(128, 126, 126);
+  border: 2px solid transparent;
+  height: 10vh;
+  background-clip: content-box;
+  position: relative;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(15, 2, 39); /* Цвет фона скроллбара */
 }

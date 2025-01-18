@@ -1,0 +1,31 @@
+.ship {
+    flex: 0 1 calc(25% - 16px);
+    box-shadow: 0 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: radial-gradient(ellipse at center, #6363ee, #01023d);
+
+    &__title {
+        margin: 0;
+    }
+
+    &__image {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .ship {
+      flex: 0 1 calc(33.33% - 16px);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .ship {
+      flex: 0 1 calc(50% - 16px);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .ship {
+      flex: 0 1 100%;
+    }
+  }

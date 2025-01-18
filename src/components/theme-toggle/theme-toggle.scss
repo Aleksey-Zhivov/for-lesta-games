@@ -1,0 +1,35 @@
+.theme-toggle {
+  width: 40px;
+  height: 20px;
+  background-color: var(--toggle-background-light);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color var(--transition-time) ease;
+
+  &.dark {
+    background-color: var(--toggle-background-dark);
+  }
+
+  .toggle-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--toggle-thumb-light);
+    transition: transform var(--transition-time) ease, background-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
+
+    &.light {
+      background-color: var(--toggle-thumb-light);
+      box-shadow: var(--toggle-thumb-shadow-light);
+      transform: translateX(0);
+    }
+
+    &.dark {
+      background-color: var(--toggle-thumb-dark);
+      box-shadow: none;
+      transform: translateX(20px);
+    }
+  }
+}

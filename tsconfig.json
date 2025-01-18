@@ -9,10 +9,15 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "baseUrl": "./",
+    "noEmit": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
     }
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+  ],
   "exclude": ["node_modules", "dist"]
 }

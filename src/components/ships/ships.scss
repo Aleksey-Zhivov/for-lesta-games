@@ -1,0 +1,9 @@
+.ships {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+}
