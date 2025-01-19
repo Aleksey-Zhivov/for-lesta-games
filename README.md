@@ -1,50 +1,41 @@
-# React + TypeScript + Vite
+# Тестовое задание 01.2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Задача - разработка веб-приложения на React
 
-Currently, two official plugins are available:
+... описание задание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Запуск проекта
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Сборка проекта производится при помощи сборщика ```Vite``` на ```dev``` окружении:
+```
+npm run dev 
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Архитектура приложения:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+В виду размеров проекта, выбрана модульная архитектура. Сохраняется инкапсуляция компонентов, есть возможность удобного масштабирования проекта.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+  src/
+├── components/ (умные компоненты)
+│   ├── ui/ (глупые компоненты)
+├── api/  (обработка api-запросов)
+├── assets/ 
+├── hooks/ (кастомные хуки)
+├── utils/ (управление глобальным состоянием, хранилище)
+├── tests/ 
+└── main.tsx
+```
+
+## Легенда:
+
+От сервера поступают данные из ```GraphQL```, которые асинхронно обрабатываются и кладутся в ```store``` при помощи ```Redux```. 
+
+## TODO
+
+### Основные залачи:
+1. Сортировка.
+2. Фильтрация.
+3. Додумать дизайн.
+4. Покрыть функционал юнит-тестами на ```Jest```.
+5. Покрыть функционал e2e тестами на ```Cypress```.

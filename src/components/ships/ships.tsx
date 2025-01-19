@@ -17,7 +17,7 @@ export const Ships: FC<TShipsProps> = ( props ) => {
         <section className="ships">
         {isLoading
           ? 
-          Array.from({ length: 8 }, (_, i) => <ShipSkeleton key={i} />)
+          Array.from({ length: 20 }, (_, i) => <ShipSkeleton key={i} />)
             : paginatedShips.map((ship) => (
                 <Ship 
                     data={ship} 

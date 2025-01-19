@@ -1,6 +1,7 @@
 .footer {
     height: 56px;
     background-color: rgba(128, 128, 128, 0.1);
+    width: calc(100vw - 80px);
     display: flex;
     flex-direction: row;
     justify-content: space-between;

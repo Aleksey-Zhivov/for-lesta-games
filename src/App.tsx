@@ -2,29 +2,43 @@ import { useEffect } from 'react'
 import './App.css'
 import { useCustomDispatch } from './utils/store'
 import { fetchGetShips } from './utils/slices/shipsSlice'
-import { Ships } from './components/ships/ships'
 import { Header } from './components/header/header'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { MainPage } from './pages/main-page'
 import { NotFoundPage } from './pages/not-found-page'
 import { Footer } from './components/footer/footer'
-import { ModalUI } from './components/ui/modal-ui/modal'
-import { Ship } from './components/ship/ship'
 import { Modal } from './components/modal/modal'
 
 const AppRouter = () => {
   const dispatch = useCustomDispatch();
+  const location = useLocation();
+  const background = location.state?.background;
   
   useEffect(() => {
     dispatch(fetchGetShips());
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/ship/:id" element={<Modal />} />
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+    <>
+      <Routes location={background || location}>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/ship/:id" element={<Modal />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+
+      {background && (
+        <Routes>
+          <Route
+            path='/ship/:id'
+            element={
+              <Modal />
+            }
+          />
+        </Routes>)}
+    </>
+
+
+    
   );
 };
 

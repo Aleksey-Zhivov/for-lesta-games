@@ -1,6 +1,7 @@
 .ships__page {
     display: flex;
     flex-direction: column;
+    margin-block-start: 80px;
     width: 100%;
 
     &-pagination {

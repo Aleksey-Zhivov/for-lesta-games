@@ -6,9 +6,9 @@ export type TShipUIProps = {
     isVisible: boolean,
     ref: LegacyRef<HTMLDivElement>,
     onClick: () => void,
-    handleMouseEnter: () => void,
-    handleMouseMove: (e: React.MouseEvent<HTMLHeadingElement>) => void,
+    handleMouseEnter: (e: React.MouseEvent) => void,
+    handleMouseMove: (e: React.MouseEvent<HTMLDivElement>) => void,
     handleMouseLeave: () => void,
-    isCharVisible: boolean,
-    cursorPosition: {x: number, y: number},
+    tooltipVisible: boolean,
+    tooltipPosition: {x: number, y: number},
 }

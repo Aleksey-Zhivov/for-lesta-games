@@ -1,30 +1,42 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { ShipUI } from "../ui/ship-ui/ship-ui"
 import { TShipProps } from "./types";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 export const Ship: FC<TShipProps> = ( props ) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const [isCharVisible, setCharIsVisible] = useState(false);
-    const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+    const [isVisible, setIsVisible] = useState<boolean>(false);
+    const [tooltipVisible, setTooltipVisible] = useState<boolean>(false);
+    const [tooltipPosition, setTooltipPosition] = useState<{x: number, y: number}>({ x: 0, y: 0 });
     const ref = useRef<HTMLDivElement | null>(null);
     const navigate = useNavigate();
+    const location = useLocation();
+    const background = location.state?.background;
 
     const onClick = () => {
-        navigate(`/ship/${props.id}`)
-    }
+        if (!background) {
+            navigate(`/ship/${props.id}`, { 
+                state: { 
+                    isModalOpen: true, 
+                    background: { 
+                        pathname: location.pathname, 
+                        search: location.search }  
+                } 
+            });
+        }
+    };
 
-    const handleMouseEnter = () => {
-        setCharIsVisible(true);
-      };
+    const handleMouseEnter = (e: React.MouseEvent) => {
+        setTooltipVisible(true);
+        setTooltipPosition({ x: e.clientX, y: e.clientY });
+    };
     
-      const handleMouseMove = (e: React.MouseEvent<HTMLHeadingElement>) => {
-        setCursorPosition({ x: e.clientX, y: e.clientY });
-      };
-    
-      const handleMouseLeave = () => {
-        setCharIsVisible(false);
-      };
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        setTooltipPosition({ x: e.clientX, y: e.clientY });
+    };
+      
+    const handleMouseLeave = () => {
+        setTooltipVisible(false);
+    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -54,7 +66,7 @@ export const Ship: FC<TShipProps> = ( props ) => {
         handleMouseEnter={handleMouseEnter}
         handleMouseMove={handleMouseMove}
         handleMouseLeave={handleMouseLeave}
-        isCharVisible={isCharVisible}
-        cursorPosition={cursorPosition}
+        tooltipVisible={tooltipVisible}
+        tooltipPosition={tooltipPosition}
     />
 }

@@ -39,6 +39,7 @@ const shipsSlice = createSlice({
             ...vehicle,
             id: uuid(),
           }))
+          console.log(action.payload)
         });
     },
   });
