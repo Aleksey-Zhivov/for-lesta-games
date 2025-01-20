@@ -3,6 +3,7 @@ import { LegacyRef } from "react"
 
 export type TShipUIProps = {
     data: TShip,
+    level: string,
     isVisible: boolean,
     ref: LegacyRef<HTMLDivElement>,
     onClick: () => void,

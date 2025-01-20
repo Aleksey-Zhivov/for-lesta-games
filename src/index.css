@@ -3,8 +3,8 @@
   --secondary-color: #6c757d;
   --background-color-light: #ffffff;
   --background-color-dark: #121212;
-  --text-color-light: #ca1b1b;
-  --text-color-dark: #ffffff;
+  --text-color: #ffffff;
+  --text-color-accent: #eec568;
   --border-color-light: #e5e5e5;
   --border-color-dark: #424242;
 
@@ -25,7 +25,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  color: var(--text-color-light);
+  color: var(--text-color);
   transition: background-color var(--transition-time), color var(--transition-time);
   margin: 0;
 }
@@ -33,39 +33,12 @@
 .body.dark-theme {
   background-color: var(--background-color-dark);
   background-image: url(../src/assets/back-dark.jpg);
-  color: var(--text-color-dark);
+  color: var(--text-color);
 }
 
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-
-  &:hover {
-    color: var(--secondary-color);
-  }
-}
-
-button {
-  background-color: var(--primary-color);
-  color: var(--background-color-light);
-  border: 1px solid var(--border-color-light);
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: background-color var(--transition-time) ease, color var(--transition-time) ease;
-
-  &:hover {
-    background-color: var(--secondary-color);
-  }
-
-  &:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
+.body.fixed {
+  overflow: hidden;
+  width: calc(100% - 12px);
 }
 
 ::-webkit-scrollbar {

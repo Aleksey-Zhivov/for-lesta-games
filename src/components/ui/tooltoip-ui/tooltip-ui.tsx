@@ -14,7 +14,6 @@ export const TooltipUI: FC<TTooltipUIProps> = ( props ) => {
       className="tooltip"
       style={{ top: props.position.y, left: props.position.x }}
     >
-      <h3 className="tooltip__title">{props.ship.title}</h3>
       <div className="tooltip__details">
         <p>Класс: {props.ship.type.title}</p>
         <p>Нация: {props.ship.nation.title}</p>

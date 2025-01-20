@@ -1,4 +1,4 @@
-import { QUERY, SHIPS_URL } from './contants';
+import { QUERY, SHIPS_URL } from './constants';
 
 export type TShip = {
     title: string,

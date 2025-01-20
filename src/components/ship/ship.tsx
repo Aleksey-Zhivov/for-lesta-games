@@ -1,11 +1,12 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { ShipUI } from "../ui/ship-ui/ship-ui"
-import { TShipProps } from "./types";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { RomanNumerals, TShipProps } from "./types";
+import { data, useLocation, useNavigate, useParams } from "react-router-dom";
 
 export const Ship: FC<TShipProps> = ( props ) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const [tooltipVisible, setTooltipVisible] = useState<boolean>(false);
+    const [romainLevel, setRomainLevel] = useState<string>('');
     const [tooltipPosition, setTooltipPosition] = useState<{x: number, y: number}>({ x: 0, y: 0 });
     const ref = useRef<HTMLDivElement | null>(null);
     const navigate = useNavigate();
@@ -38,7 +39,21 @@ export const Ship: FC<TShipProps> = ( props ) => {
         setTooltipVisible(false);
     };
 
+    const arabicToRoman = (num: number) => {       
+        let result = '';
+        for (const numeral in RomanNumerals) {
+            const value = RomanNumerals[numeral as keyof typeof RomanNumerals];
+    
+            while (num >= value) {
+                result += numeral;
+                num -= value;
+            }
+        }
+        setRomainLevel(result);
+    }
+    
     useEffect(() => {
+        arabicToRoman(props.data.level);
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -60,6 +75,7 @@ export const Ship: FC<TShipProps> = ( props ) => {
     
     return <ShipUI 
         data={props.data} 
+        level={romainLevel}
         isVisible={isVisible} 
         ref={ref}
         onClick={onClick}

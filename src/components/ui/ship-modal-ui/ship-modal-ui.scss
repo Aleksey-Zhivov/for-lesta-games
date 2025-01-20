@@ -1,0 +1,21 @@
+.ship-modal {
+    text-align: left;
+    &__characteristic{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        &-image {
+            margin-inline-start: -80px;
+            width: 75%;
+        }
+
+    }
+
+    &__description {
+        text-align: justify;
+        font-size: 1.15rem;
+    }
+
+}

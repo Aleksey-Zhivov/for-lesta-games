@@ -2,7 +2,7 @@ import { getShips, TShip } from "@/api/shipsAPI";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from 'uuid';
 
-interface TShipWithId extends TShip {
+export interface TShipWithId extends TShip {
   id: string;
 } 
 
@@ -35,11 +35,10 @@ const shipsSlice = createSlice({
         })
         .addCase(fetchGetShips.fulfilled, (state, action) => {
           state.isLoading = false;
-          state.vehicles = action.payload.vehicles.map((vehicle) =>({
+          state.vehicles = action.payload.vehicles.map((vehicle) => ({
             ...vehicle,
             id: uuid(),
           }))
-          console.log(action.payload)
         });
     },
   });
