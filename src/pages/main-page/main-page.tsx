@@ -1,12 +1,12 @@
-import { Ships } from "../components/ships/ships";
-import { FC, useMemo, useState } from "react";
-import { Pagination } from "../components/pagination/pagination";
+import { FC, useState } from "react";
 import { useCustomSelector } from "@/utils/store";
 import { RadioUI } from "@/components/ui/radio-ui/radio-ui";
 import './main-page.scss';
 import { Sorting } from "@/components/sorting/sorting";
 import { Filtration } from "@/components/filtration/filtration";
 import { useSortedAndFilteredShips } from "@/hooks/useSortAndFilter";
+import { Ships } from "@/components/ships/ships";
+import { Pagination } from "@/components/pagination/pagination";
 
 export const MainPage: FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
