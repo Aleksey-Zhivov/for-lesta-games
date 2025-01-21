@@ -4,10 +4,10 @@ import { useCustomDispatch } from './utils/store'
 import { fetchGetShips } from './utils/slices/shipsSlice'
 import { Header } from './components/header/header'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
-import { MainPage } from './pages/main-page'
 import { NotFoundPage } from './pages/not-found-page'
 import { Footer } from './components/footer/footer'
 import { Modal } from './components/modal/modal'
+import { MainPage } from './pages/main-page/main-page'
 
 const AppRouter = () => {
   const dispatch = useCustomDispatch();
