@@ -11,20 +11,18 @@ export const ShipModalUI: FC<TShipModalUIProps> = ( props ) => (
                 className="ship-modal__characteristic-image"/>
             <div className="ship-modal__characteristic-block">
                 <h3 className="ship-modal__characteristic-block_title">{props.name}</h3>
-                <table className="ship-modal__characteristic-block_table">
-                    <tr>
-                        <th>Тип: </th>
-                        <th>{props.type}</th>
-                    </tr>
-                    <tr>
-                        <th>Нация: </th>
-                        <th>{props.nation}</th>
-                    </tr>
-                    <tr>
-                        <th>Уровень: </th>
-                        <th>{props.level}</th>
-                    </tr>
-                </table>
+                <div className="ship-modal__characteristic-block_item">
+                    <span className="item__label">Тип</span>
+                    <span className="item__value">{props.type}</span>
+                </div>
+                <div className="ship-modal__characteristic-block_item">
+                    <span className="item__label">Нация</span>
+                    <span className="item__value">{props.nation}</span>
+                </div>
+                <div className="ship-modal__characteristic-block_item">
+                    <span className="item__label">Уровень</span>
+                    <span className="item__value">{props.level}</span>
+                </div>
             </div>
         </div>
         <p className="ship-modal__description">{props.description}</p>

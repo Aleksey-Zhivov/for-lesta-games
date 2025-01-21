@@ -6,5 +6,6 @@ export type TFiltrationUIProps = {
     filterText: string,
     handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
     onClick: () => void,
-    handleFilter: (field: string) => void    
+    handleFilter: (field: string) => void,
+    handleClearFilter: () => void,
 }

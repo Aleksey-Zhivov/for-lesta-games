@@ -3,12 +3,19 @@
     flex-direction: column;
     margin-block-start: 80px;
     width: 100%;
+    flex: 1;
     
     &-panel {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding-inline: 20px;
+        margin-block-start: 10px;
+
+        &_text {
+            margin: auto;
+            font-size: 1.25rem;
+        }
     }
 
     &-pagination {

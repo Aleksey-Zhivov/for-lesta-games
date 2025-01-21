@@ -1,5 +1,9 @@
 .ship-modal {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+
     &__characteristic{
         display: flex;
         flex-direction: row;
@@ -7,15 +11,43 @@
         justify-content: space-around;
 
         &-image {
-            margin-inline-start: -80px;
+            margin-inline-start: -60px;
+            margin-block-start: -100px;
             width: 75%;
         }
 
+        &-block {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: flex-start;
+            flex: 1;
+
+            &_title {
+                min-height: 1.5rem;
+                text-transform: uppercase;
+                color: var(--text-color-accent);
+            }
+
+            &_item {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 5px;
+                
+                &:not(:last-child) {
+                    padding-block-end: 10px;
+                    border-bottom: 1px solid rgba(88, 86, 86, 0.35);
+                }
+            }
+        }
     }
 
     &__description {
         text-align: justify;
         font-size: 1.15rem;
+        margin-block-end: 0;
     }
 
 }

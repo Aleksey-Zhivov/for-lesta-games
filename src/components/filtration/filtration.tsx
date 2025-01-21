@@ -5,7 +5,7 @@ import { TFiltrationProps } from "./types";
 
 export const Filtration: FC<TFiltrationProps> = ( props ) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [filterField, setFilterField] = useState<string>("название");
+    const [filterField, setFilterField] = useState<string>("title");
     const [filterText, setFilterText] = useState<string>("");
 
     const options: TOption[] = [
@@ -20,12 +20,20 @@ export const Filtration: FC<TFiltrationProps> = ( props ) => {
     const handleFilterFieldChange = (field: string) => {
         setFilterField(field);
         setIsOpen(false);
+        if (filterText) {
+            props.onFilterChange(field, filterText);
+        }
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setFilterText(value);
         props.onFilterChange(filterField, value);
+    };
+
+    const handleClearFilter = () => {
+        setFilterText("");
+        props.onFilterChange(filterField, "");
     };
 
     return (
@@ -37,6 +45,7 @@ export const Filtration: FC<TFiltrationProps> = ( props ) => {
               handleInputChange={handleInputChange}
               onClick={onClick}
               handleFilter={handleFilterFieldChange}
+              handleClearFilter={handleClearFilter}
           />
       </div>
     );
