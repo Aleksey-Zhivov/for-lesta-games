@@ -1,4 +1,4 @@
-import { getShips, TShip } from "@/api/shipsAPI";
+import { getShips, TShip } from "../../api/shipsAPI";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { v4 as uuid } from 'uuid';
 

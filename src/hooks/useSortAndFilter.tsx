@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { TShipWithId } from "@/utils/slices/shipsSlice";
+import { TShipWithId } from "../utils/slices/shipsSlice";
 
 export const useSortedAndFilteredShips = (ships: TShipWithId[]) => {
     const [filteredShips, setFilteredShips] = useState<TShipWithId[]>(ships);

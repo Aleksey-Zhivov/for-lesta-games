@@ -1,5 +1,3 @@
-import { TShip } from "@/api/shipsAPI"
-
 export type TShipModalUIProps = {
     name: string,
     type: string,

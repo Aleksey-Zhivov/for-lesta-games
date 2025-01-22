@@ -1,43 +1,48 @@
 .sorting {
-    position: relative;
-    display: inline-block;
-    color: var(--text-color);
-  
-    &__button {
-      padding: 10px 20px;
-      min-width: 150px;
-      background-color: rgba(32, 32, 32, 0.3);
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      color: inherit;
+  position: relative;
+  display: flex;
+  color: var(--text-color);
 
-      &:hover {
-        box-shadow: 0 0 10px 2px var(--text-color);
-      }
-    }
-  
-    &__dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: rgba(10, 10, 20, .5);
-      border-radius: 4px;
-      z-index: 10;
-      text-align: left;
-      min-width: 150px;
-      padding-inline: 0;
-    }
-  
-    &__option {
-      padding-block: 10px;
-      padding-inline: 20px;
-      cursor: pointer;
-      list-style: none;
-  
-      &:hover {
-        background: #6b6666;
-      }
+  &__button {
+    padding: 10px 20px;
+    min-width: 150px;
+    background-color: rgba(32, 32, 32, 0.3);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: inherit;
+
+    &:hover {
+      box-shadow: 0 0 10px 2px var(--text-color);
     }
   }
   
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(10, 10, 20, .5);
+    border-radius: 4px;
+    z-index: 10;
+    text-align: left;
+    min-width: 150px;
+    padding-inline: 0;
+  }
+  
+  &__option {
+    padding-block: 10px;
+    padding-inline: 20px;
+    cursor: pointer;
+    list-style: none;
+
+    &:hover {
+      background: #6b6666;
+    }
+  }
+}
+
+@media (width <= 600px) {
+  .sorting {
+    justify-content: flex-start;
+  }
+}

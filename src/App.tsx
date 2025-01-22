@@ -4,10 +4,10 @@ import { useCustomDispatch } from './utils/store'
 import { fetchGetShips } from './utils/slices/shipsSlice'
 import { Header } from './components/header/header'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
-import { NotFoundPage } from './pages/not-found-page'
+import { NotFoundPage } from './pages/not-found-page/not-found-page'
 import { Footer } from './components/footer/footer'
 import { Modal } from './components/modal/modal'
-import { MainPage } from './pages/main-page/main-page'
+import { MainPage } from './pages/main-page/ships-page'
 
 const AppRouter = () => {
   const dispatch = useCustomDispatch();
@@ -29,21 +29,18 @@ const AppRouter = () => {
       {background && (
         <Routes>
           <Route
-            path='/ship/:id'
+            path='ship/:id'
             element={
               <Modal />
             }
           />
         </Routes>)}
     </>
-
-
-    
   );
 };
 
 export const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename='/for-lesta-games'>
     <Header />
     <AppRouter />
     <Footer />

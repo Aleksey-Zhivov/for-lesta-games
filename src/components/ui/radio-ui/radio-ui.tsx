@@ -4,19 +4,19 @@ import './radio-ui.scss';
 
 export const RadioUI: FC<TRadioUIProps> = ( props ) => (
     <div className="controls">
-        <span>Элементов на странице:</span>
+        <span className="controls__text">Элементов на странице:</span>
         <div className="controls__radio-group">
             {props.ITEMS_PER_PAGE.map((value) => (
-                <label key={value} className="controls__radio-label">
+                <label key={value} className="controls__radio-group_label">
                     <input
                         type="radio"
                         name="itemsPerPage"
                         value={value}
                         checked={props.itemsPerPage === value}
                         onChange={() => props.handleItemsPerPageChange(value)}
-                        className="controls__radio-input"
+                        className="controls__radio-group_input"
                     />
-                    <span className="controls__radio-text">{value}</span>
+                    <span className="controls__radio-group_text">{value}</span>
                 </label>
             ))}
         </div>

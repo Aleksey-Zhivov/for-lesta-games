@@ -10,15 +10,13 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "noEmit": true,
-    "types": ["jest", "@testing-library/jest-dom"],
-    "paths": {
-      "@/*": ["src/*"],
-    }
+    "types": ["jest", "@testing-library/jest-dom", "cypress"],
   },
   "include": [
     "src",
     "src/**/*.ts",
     "src/**/*.tsx",
+    "cypress/**/*.ts",
   ],
   "exclude": ["node_modules", "dist"]
 }

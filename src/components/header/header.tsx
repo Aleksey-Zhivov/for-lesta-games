@@ -7,7 +7,7 @@ export const Header: FC = () => (
         {/* Если бы у нас было какое-то меню, то мы бы пользовали Nav, но 
         у нас пока нет ничего, поэтому просто лине и переключатель темы */}
         <a href="https://korabli.su/" className="header__link">
-            <img src="src/assets/logo_mk.svg" alt="Logo" className="header__logo" />
+            <img src="/public/logo_mk.svg" alt="Logo" className="header__logo" />
         </a>
         <ThemeToggle />
     </header>

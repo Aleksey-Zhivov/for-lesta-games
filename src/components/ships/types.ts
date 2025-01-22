@@ -1,4 +1,4 @@
-import { TShipWithId } from "@/utils/slices/shipsSlice";
+import { TShipWithId } from "../../utils/slices/shipsSlice";
 
 export type TShipsProps = {
     currentPage: number;

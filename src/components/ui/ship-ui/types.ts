@@ -1,4 +1,4 @@
-import { TShip } from "@/api/shipsAPI"
+import { TShip } from "../../../api/shipsAPI"
 import { LegacyRef } from "react"
 
 export type TShipUIProps = {

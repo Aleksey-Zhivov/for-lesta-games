@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { TPaginationProps } from "./types";
 import { PaginationUI } from "../ui/pagination-ui/pagination-ui";
-import { usePagination } from "@/hooks/usePagination";
+import { usePagination } from "../..//hooks/usePagination";
 
 export const Pagination: FC<TPaginationProps> = (props) => {
   const totalPages = Math.ceil(props.totalItems / props.itemsPerPage);

@@ -1,4 +1,5 @@
 {
+  "homepage": "https://aleksey-zhivov.github.io/for-lesta-games",
   "name": "lesta-games",
   "private": true,
   "version": "0.0.0",
@@ -22,8 +23,10 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",
+    "@rollup/plugin-dynamic-import-vars": "^2.1.5",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
+    "@types/cypress": "^1.1.6",
     "@types/jest": "^29.5.14",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",

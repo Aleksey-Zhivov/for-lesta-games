@@ -1,7 +1,6 @@
 import { FC, forwardRef } from "react";
 import { TShipUIProps } from "./types";
 import './ship-ui.scss';
-import { TooltipUI } from "../tooltoip-ui/tooltip-ui";
 
 export const ShipUI: FC<TShipUIProps> = forwardRef(( props, ref ) => {
     return (

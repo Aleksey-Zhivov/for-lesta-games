@@ -1,4 +1,4 @@
-import { useCustomSelector } from "@/utils/store";
+import { useCustomSelector } from "../../utils/store";
 import { FC } from "react";
 import './ships.scss';
 import { Ship } from "../ship/ship";
@@ -14,17 +14,14 @@ export const Ships: FC<TShipsProps> = ( props ) => {
     const paginatedShips = props.ships.slice(startIndex, endIndex);
 
     return (
-        <section className="ships">
-        {isLoading
-          ? 
-          Array.from({ length: 20 }, (_, i) => <ShipSkeleton key={i} />)
-            : paginatedShips.map((ship) => (
+        <>
+        {paginatedShips.map((ship) => (
                 <Ship 
                     data={ship} 
                     key={ship.id} 
                     id={ship.id}
                 />
             ))}
-        </section>
+        </>
     );
 };

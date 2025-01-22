@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import { SortingUI } from "../ui/sorting-ui/sorting-ui";
 import { TOption } from "../ui/sorting-ui/types";
 import { TSortingProps } from "./types";
-import { TShipWithId } from "@/utils/slices/shipsSlice";
 
 export const Sorting: FC<TSortingProps> = ( props ) => {
   const [isOpen, setIsOpen] = useState(false);

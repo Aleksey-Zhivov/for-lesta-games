@@ -1,24 +1,57 @@
 .controls {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+  
+    &__radio-group {
+        display: flex;
+        gap: 6px;
+  
+        &_label {
+            display: flex;
+            font-size: 0.75rem;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+    
+            &:hover {
+            box-shadow: 0 0 10px 2px var(--text-color);
+            }
 
-    &__radio-label {
-        font-size: 16px;
-        color: var(--text-color);
-    }
-
-    &__radio-input {
-        padding: 4px 8px;
-        font-size: 16px;
-        border: 1px solid var(--border-color);
-        border-radius: 4px;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        cursor: pointer;
-
-        &:hover {
-            border-color: var(--hover-border-color);
+            &:has(input:checked) {
+                border: 1px solid var(--text-color);
+            }
         }
+  
+        &_text {
+            padding: 4px 8px;
+            text-align: center;
+        }
+    
+        &_input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;  
+        }
+    }
+}
+
+
+@media (width <= 900px) {
+    .controls {
+        flex-direction: column;
+    }
+}
+
+@media (width <= 600px) {
+    .controls {
+        flex-direction: row;
     }
 }

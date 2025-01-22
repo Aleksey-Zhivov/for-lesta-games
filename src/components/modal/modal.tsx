@@ -1,8 +1,7 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import { ModalUI } from '../ui/modal-ui/modal';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { useCustomSelector } from '@/utils/store';
-import { Ship } from '../ship/ship';
+import { useCustomSelector } from '../../utils/store';
 import { ShipModalUI } from '../ui/ship-modal-ui/ship-modal-ui';
 
 export const Modal: FC = () => {

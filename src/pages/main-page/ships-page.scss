@@ -22,7 +22,18 @@
         display: flex;
         flex-direction: row;
         gap: 10px;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
+    }
+}
+
+@media (width <= 600px) {
+    .ships__page-panel {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .ships__page-pagination {
+        flex-direction: column;
     }
 }

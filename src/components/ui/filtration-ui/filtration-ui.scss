@@ -9,11 +9,13 @@
     position: relative;
     display: flex;
     align-items: center;
+
   }
 
   &__input {
     padding: 8px 20px;
     background: rgba(10, 10, 20, .5);
+    font-size: 18px;
     outline: none;
     border: transparent;
     color: inherit;
@@ -74,5 +76,16 @@
     &:hover {
       background: #6b6666;
     }
+  }
+}
+
+@media (width <= 600px) {
+  .filtration {
+      justify-content: space-between;
+
+      &__input,
+      &__input-wrapper {
+        width: 100%;
+      }
   }
 }

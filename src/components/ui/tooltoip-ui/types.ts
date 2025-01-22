@@ -1,4 +1,4 @@
-import { TShip } from "@/api/shipsAPI";
+import { TShip } from "../../../api/shipsAPI";
 
 export type TTooltipUIProps = {
     ship: TShip | null,

@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef, useState } from "react";
 import { ShipUI } from "../ui/ship-ui/ship-ui"
 import { RomanNumerals, TShipProps } from "./types";
-import { data, useLocation, useNavigate, useParams } from "react-router-dom";
+import { data, useLocation, useNavigate } from "react-router-dom";
 
 export const Ship: FC<TShipProps> = ( props ) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
