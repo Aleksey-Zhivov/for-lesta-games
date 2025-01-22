@@ -40,6 +40,6 @@ export const FiltrationUI: FC<TFiltrationUIProps> = ( props ) => (
                     </li>
                 ))}
             </ul>
-            )}
+        )}
     </div>
 )
